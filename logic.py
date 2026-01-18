@@ -69,8 +69,8 @@ class GameLogic:
         # Очищаем множество столкновений для нового кадра
         self.collided_pairs.clear()
         
-        # Обновляем позиции шариков
-        for ball in self.balls:
+        # Обновляем позиции шариков (используем копию списка для безопасной итерации)
+        for ball in self.balls[:]:
             ball.update_position(dt, self.screen_width, self.screen_height)
             
             # Проверка попадания в зону удаления
