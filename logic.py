@@ -198,4 +198,3 @@ class GameLogic:
         self.screen_width = width
         self.screen_height = height
         self.delete_zone_x = width - self.delete_zone_size
-
