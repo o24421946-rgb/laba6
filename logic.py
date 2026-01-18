@@ -84,9 +84,9 @@ class GameLogic:
     def _is_in_delete_zone(self, ball: Ball) -> bool:
         """Проверяет, находится ли шарик в зоне удаления."""
         return (ball.x >= self.delete_zone_x and 
-                ball.y <= self.delete_zone_size and
+                ball.y <= self.delete_zone_y + self.delete_zone_size and
                 ball.x <= self.screen_width and
-                ball.y >= 0)
+                ball.y >= self.delete_zone_y)
     
     def _check_collisions(self):
         """Проверяет столкновения между шариками и смешивает их цвета."""
@@ -189,9 +189,9 @@ class GameLogic:
     def is_in_delete_zone(self, x: float, y: float) -> bool:
         """Проверяет, находится ли точка в зоне удаления."""
         return (x >= self.delete_zone_x and 
-                y <= self.delete_zone_size and
+                y <= self.delete_zone_y + self.delete_zone_size and
                 x <= self.screen_width and
-                y >= 0)
+                y >= self.delete_zone_y)
     
     def set_screen_size(self, width: int, height: int):
         """Устанавливает размер экрана."""
